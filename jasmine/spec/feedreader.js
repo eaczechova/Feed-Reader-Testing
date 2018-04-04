@@ -51,22 +51,28 @@ $(function() {
     */
 
     it('the menu element changes visibility if menu icon is clicked', function() {
-      var el = document.querySelector('body');
-      var icon = document.querySelector('.menu-icon-link');
+      var el = $('body');
+      var menuIcon= $('menu-icon-link');
       var flag = false;
 
-      icon.onclick = function() {
-        if(!flag) {
+      /* A flag variable is used to store information about current class
+      * visibility. If body element has class .menu-hidden hidden, flag is set
+      * to true, if not, to false. In expect() function part, flag is used to
+      * validate the test.
+      */
+      
+      menuIcon.click(function() {
+        if(el.hasClass("menu-hidden")) {
           flag = true;
         } else {
           flag = false;
         }
-      };
+      });
 
-      if(!flag) {
-        expect(el.className).toBe('menu-hidden');
+      if(flag) {
+        expect(flag).toBe(true);
       } else {
-        expect(el.className).toBe(null);
+        expect(flag).toBe(false);
       }
 
     });
