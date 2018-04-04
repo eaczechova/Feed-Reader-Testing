@@ -30,13 +30,20 @@ $(function() {
   });
 
   describe('The menu', function() {
-    var el = document.querySelector('body');
+    var el = $('body');
+    var flag = true;
 
     /* A test that ensures the menu element is hidden by default.
     */
 
+    if(el.hasClass("menu-hidden")) {
+      flag = true;
+    } else {
+      flag = false;
+    }
+
     it('the menu element is hidden by default', function() {
-      expect(el.className).toBe('menu-hidden');
+      expect(flag).toBe(true);
     });
 
     /* A test that ensures the menu changes visibility when
