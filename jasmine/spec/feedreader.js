@@ -63,13 +63,15 @@ $(function() {
   });
 
   describe('New Feed Selection', function() {
-    var feedEntries0;
-    var feedEntries1;
+    let prevUrlEntries;
+    let newUrlEntries;
 
     beforeEach(function(done) {
       loadFeed(0, function() {
-        feedEntries0 = $('.feed').find('h2').html();
+        prevUrlEntries = $('.feed').html();
+        loadFeed(1, function() {
         done();
+        });
       });
     });
 
@@ -77,12 +79,9 @@ $(function() {
     * by the loadFeed function that the content actually changes.
     */
 
-    it('content changes', function(done) {
-      loadFeed(1, function() {
-        feedEntries1 = $('.feed').find('h2').html();
-        expect(feedEntries0).not.toEqual(feedEntries1);
-        done();
-      });
+    it('when a new feed is loaded, the content changes', function() {
+      newUrlEntries = $('.feed').html();
+      expect(prevUrlEntries).not.toEqual(newUrlEntries);
     });
   });
 }());
