@@ -40,9 +40,9 @@ $(function() {
       const menuIcon= $('menu-icon-link');
 
       expect(bodyElement.hasClass('menu-hidden')).toBe(true);
-      menuIcon.trigger('click', function() {
-        expect(bodyElement.hasClass('menu-hidden')).toBe(false);
-      });
+        menuIcon.click(function() {
+          expect(bodyElement.hasClass('menu-hidden')).toBe(false);
+        });
     });
   });
 
