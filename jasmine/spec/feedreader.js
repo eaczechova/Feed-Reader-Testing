@@ -58,9 +58,10 @@ $(function() {
     */
 
     it('feed container has at least one entry element', function() {
-      expect($('.entry').length).toBeGreaterThan(0);
+      expect($('.feed .entry').length).toBeGreaterThan(0);
     });
   });
+
 
   describe('New Feed Selection', function() {
     let prevUrlEntries;
