@@ -1,5 +1,18 @@
+/*
+The spec file run by Jasinie containing all the tests
+that will be run against the application.
+*/
+
 $(function() {
+/* Test are placed within $(function() to make sure all DOM elements
+* are loaded
+*/
+
   describe('RSS Feeds', function() {
+
+    /* A test that makes sure that allFeeds variable has been defined and
+    * it is not empty
+    */
 
     it('allFeeds are defined and are not empty', function() {
       expect(allFeeds).toBeDefined();
@@ -7,7 +20,7 @@ $(function() {
     });
 
     /* A test that loops through each feed in the allFeeds object and
-    * ensures it has a URL defined and that the URL is not empty.
+    ensures it has a URL defined and that the URL is not empty.
     */
 
     it('URL is defined and is not empty', function() {
